@@ -4,7 +4,7 @@ import SocialLinks from './SocialLinks';
 
 const Layout: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-4 relative">
+    <div className="min-h-screen flex flex-col items-center justify-center p-4 bg-background relative">
       <div className="max-w-4xl w-full mx-auto">
         <main className="py-8">
           <div id="home" className="mb-16">
@@ -18,7 +18,11 @@ const Layout: React.FC = () => {
           </div>
         </main>
       </div>
-      <SocialLinks />
+      <SocialLinks 
+        linkedinUrl="https://linkedin.com/in/balaji-sasikumar/" 
+        githubUrl="https://github.com/balaji-sasikumar"
+        devtoUrl="https://dev.to/balajisasikumar"
+      />
     </div>
   );
 };
