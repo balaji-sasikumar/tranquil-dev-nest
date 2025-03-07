@@ -1,41 +1,40 @@
 
 import React from 'react';
-import { Code, Database, Computer, Server, Github, Cloud } from 'lucide-react';
 import AnimatedText from '@/components/AnimatedText';
 import SkillItem from '@/components/SkillItem';
 import ProjectCard from '@/components/ProjectCard';
-import ExperienceItem from '@/components/ExperienceItem';
+import ExperienceTimeline from '@/components/ExperienceTimeline';
 import { Separator } from '@/components/ui/separator';
 
 const Home: React.FC = () => {
   const skills = [
     {
-      icon: Computer,
+      icon: 'languages',
       title: 'Languages',
       items: ['TypeScript', 'Python', 'C#', 'JavaScript']
     },
     {
-      icon: Code,
+      icon: 'frameworks',
       title: 'Frameworks',
       items: ['Node.js', 'React', 'Angular', 'Ionic', 'Electron']
     },
     {
-      icon: Server,
+      icon: 'webTech',
       title: 'Web Technologies',
       items: ['Bootstrap', 'Tailwind CSS', 'Material-UI']
     },
     {
-      icon: Database,
+      icon: 'database',
       title: 'Database',
       items: ['MongoDB', 'SQL']
     },
     {
-      icon: Github,
+      icon: 'tools',
       title: 'Tools',
       items: ['Git', 'Docker', 'Kubernetes']
     },
     {
-      icon: Cloud,
+      icon: 'cloud',
       title: 'Cloud Platforms',
       items: ['Azure']
     }
@@ -131,14 +130,6 @@ const Home: React.FC = () => {
             />
           ))}
         </div>
-        <div className="mt-6 text-center">
-          <h3 className="text-lg font-medium mb-2">Specialized Skills</h3>
-          <ul className="text-sm text-muted-foreground inline-block text-left">
-            <li className="mb-1">• Authentication & Authorization (Azure AD B2C, Keycloak)</li>
-            <li className="mb-1">• Performance Optimization (Database pagination, file streaming)</li>
-            <li>• Web Security (Encryption, Secure API communication)</li>
-          </ul>
-        </div>
       </section>
 
       <Separator />
@@ -165,18 +156,7 @@ const Home: React.FC = () => {
       {/* Experience Section */}
       <section>
         <h2 className="text-2xl font-semibold mb-6 text-center">Experience</h2>
-        <div className="space-y-6">
-          {experiences.map((exp, index) => (
-            <ExperienceItem
-              key={index}
-              title={exp.title}
-              company={exp.company}
-              period={exp.period}
-              achievements={exp.achievements}
-              delay={index * 200}
-            />
-          ))}
-        </div>
+        <ExperienceTimeline experiences={experiences} />
       </section>
     </div>
   );
