@@ -2,44 +2,16 @@
 import React from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-
-interface BlogPost {
-  id: number;
-  title: string;
-  excerpt: string;
-  date: string;
-  readTime: string;
-  tags: string[];
-}
-
-const blogPosts: BlogPost[] = [
-  {
-    id: 1,
-    title: 'Building Secure Applications with Azure AD B2C',
-    excerpt: 'A deep dive into implementing Azure AD B2C for authentication and authorization in modern web applications.',
-    date: 'September 15, 2023',
-    readTime: '8 min read',
-    tags: ['Azure', 'Authentication', 'Security']
-  },
-  {
-    id: 2,
-    title: 'Migrating from .NET & SQL to Node.js & MongoDB',
-    excerpt: 'Lessons learned and performance improvements from our recent migration project.',
-    date: 'July 21, 2023',
-    readTime: '10 min read',
-    tags: ['Node.js', 'MongoDB', 'Migration']
-  },
-  {
-    id: 3,
-    title: 'Building Electron Apps with React and Material-UI',
-    excerpt: 'A step-by-step guide to creating desktop applications using web technologies.',
-    date: 'May 5, 2023',
-    readTime: '12 min read',
-    tags: ['Electron', 'React', 'Desktop Apps']
-  }
-];
+import { useNavigate } from 'react-router-dom';
+import { blogPosts } from '@/data/blogPosts';
 
 const BlogList: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleReadMore = (slug: string) => {
+    navigate(`/blog/${slug}`);
+  };
+
   return (
     <div className="space-y-6 animate-fade-up">
       {blogPosts.map((post, index) => (
@@ -61,7 +33,11 @@ const BlogList: React.FC = () => {
             </div>
           </CardContent>
           <CardFooter>
-            <Button variant="ghost" size="sm">
+            <Button 
+              variant="ghost" 
+              size="sm"
+              onClick={() => handleReadMore(post.slug)}
+            >
               Read More →
             </Button>
           </CardFooter>

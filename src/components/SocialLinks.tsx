@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { Linkedin, Github, Code2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface SocialLinksProps {
@@ -19,7 +18,7 @@ const SocialLinks: React.FC<SocialLinksProps> = ({ linkedinUrl, githubUrl, devto
         onClick={() => window.open(linkedinUrl, '_blank')}
         aria-label="LinkedIn"
       >
-        <Linkedin className="h-5 w-5" />
+        <i className="devicon-linkedin-plain text-xl"></i>
       </Button>
       
       <Button
@@ -29,7 +28,7 @@ const SocialLinks: React.FC<SocialLinksProps> = ({ linkedinUrl, githubUrl, devto
         onClick={() => window.open(githubUrl, '_blank')}
         aria-label="GitHub"
       >
-        <Github className="h-5 w-5" />
+        <i className="devicon-github-original text-xl"></i>
       </Button>
       
       <Button
@@ -39,7 +38,7 @@ const SocialLinks: React.FC<SocialLinksProps> = ({ linkedinUrl, githubUrl, devto
         onClick={() => window.open(devtoUrl, '_blank')}
         aria-label="Dev.to"
       >
-        <Code2 className="h-5 w-5" />
+        <i className="devicon-devto-plain text-xl"></i>
       </Button>
     </div>
   );

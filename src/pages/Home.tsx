@@ -1,5 +1,7 @@
+
 import React from "react";
 import AnimatedText from "@/components/AnimatedText";
+import SplitText from "@/components/SplitText";
 import SkillItem from "@/components/SkillItem";
 import ProjectCard from "@/components/ProjectCard";
 import ExperienceTimeline from "@/components/ExperienceTimeline";
@@ -110,10 +112,14 @@ const Home: React.FC = () => {
             className="text-4xl font-bold"
             animation="fade-in"
           />
-          <div className="mt-2">
-            <h2 className="text-xl text-muted-foreground typing-text">
-              Software Developer
-            </h2>
+          <div className="mt-4">
+            <SplitText
+              text="Software Developer"
+              className="text-xl text-muted-foreground font-medium"
+              delay={0.5}
+              staggerChildren={0.05}
+              tag="h2"
+            />
           </div>
         </div>
         <AnimatedText
