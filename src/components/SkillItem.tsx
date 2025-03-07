@@ -1,18 +1,6 @@
 
 import React from 'react';
 import { cn } from '@/lib/utils';
-import { 
-  Code, Database, Globe, 
-  GitBranch, Server, Cloud,
-  FileCode, Cpu, MonitorSmartphone,
-  Braces, Terminal, Coffee,
-  Package, PenTool, Hash,
-  Webhook
-} from 'lucide-react';
-
-interface SkillIconMappingType {
-  [key: string]: JSX.Element;
-}
 
 interface SkillItemProps {
   icon: string;
@@ -29,65 +17,80 @@ const SkillItem: React.FC<SkillItemProps> = ({
   className,
   delay = 0
 }) => {
-  // Map skill names to appropriate icons
+  // Map skill names to appropriate icons using devicon
   const getIcon = () => {
     switch(icon) {
       case 'languages':
-        return <FileCode className="w-5 h-5 mr-2" />;
+        return <i className="devicon-javascript-plain colored text-xl mr-2"></i>;
       case 'frameworks':
-        return <Code className="w-5 h-5 mr-2" />;
+        return <i className="devicon-react-original colored text-xl mr-2"></i>;
       case 'webTech':
-        return <Globe className="w-5 h-5 mr-2" />;
+        return <i className="devicon-html5-plain colored text-xl mr-2"></i>;
       case 'database':
-        return <Database className="w-5 h-5 mr-2" />;
+        return <i className="devicon-mongodb-plain colored text-xl mr-2"></i>;
       case 'tools':
-        return <GitBranch className="w-5 h-5 mr-2" />;
-      case 'platforms':
-        return <Cpu className="w-5 h-5 mr-2" />;
+        return <i className="devicon-git-plain colored text-xl mr-2"></i>;
       case 'cloud':
-        return <Cloud className="w-5 h-5 mr-2" />;
-      case 'mobile':
-        return <MonitorSmartphone className="w-5 h-5 mr-2" />;
+        return <i className="devicon-azure-plain colored text-xl mr-2"></i>;
       default:
-        return <Server className="w-5 h-5 mr-2" />;
+        return <i className="devicon-javascript-plain colored text-xl mr-2"></i>;
     }
   };
 
-  // Map individual skill items to icons
-  const skillIconMapping: SkillIconMappingType = {
-    // Languages
-    'TypeScript': <Braces className="w-4 h-4 mr-1" />,
-    'Python': <Terminal className="w-4 h-4 mr-1" />,
-    'C#': <Hash className="w-4 h-4 mr-1" />,
-    'JavaScript': <Code className="w-4 h-4 mr-1" />,
-    
-    // Frameworks
-    'Node.js': <Server className="w-4 h-4 mr-1" />,
-    'React': <Code className="w-4 h-4 mr-1" />,
-    'Angular': <Code className="w-4 h-4 mr-1" />,
-    'Ionic': <MonitorSmartphone className="w-4 h-4 mr-1" />,
-    'Electron': <Globe className="w-4 h-4 mr-1" />,
-    
-    // Web Technologies
-    'Bootstrap': <PenTool className="w-4 h-4 mr-1" />,
-    'Tailwind CSS': <PenTool className="w-4 h-4 mr-1" />,
-    'Material-UI': <PenTool className="w-4 h-4 mr-1" />,
-    
-    // Database
-    'MongoDB': <Database className="w-4 h-4 mr-1" />,
-    'SQL': <Database className="w-4 h-4 mr-1" />,
-    
-    // Tools
-    'Git': <GitBranch className="w-4 h-4 mr-1" />,
-    'Docker': <Package className="w-4 h-4 mr-1" />,
-    'Kubernetes': <Cloud className="w-4 h-4 mr-1" />,
-    
-    // Cloud Platforms
-    'Azure': <Cloud className="w-4 h-4 mr-1" />,
-  };
-
+  // Map individual skill items to devicon icons
   const getSkillIcon = (skillName: string) => {
-    return skillIconMapping[skillName] || <FileCode className="w-4 h-4 mr-1" />;
+    switch(skillName) {
+      // Languages
+      case 'TypeScript':
+        return <i className="devicon-typescript-plain colored text-2xl mr-3"></i>;
+      case 'Python':
+        return <i className="devicon-python-plain colored text-2xl mr-3"></i>;
+      case 'C#':
+        return <i className="devicon-csharp-plain colored text-2xl mr-3"></i>;
+      case 'JavaScript':
+        return <i className="devicon-javascript-plain colored text-2xl mr-3"></i>;
+      
+      // Frameworks
+      case 'Node.js':
+        return <i className="devicon-nodejs-plain colored text-2xl mr-3"></i>;
+      case 'React':
+        return <i className="devicon-react-original colored text-2xl mr-3"></i>;
+      case 'Angular':
+        return <i className="devicon-angularjs-plain colored text-2xl mr-3"></i>;
+      case 'Ionic':
+        return <i className="devicon-ionic-original colored text-2xl mr-3"></i>;
+      case 'Electron':
+        return <i className="devicon-electron-original colored text-2xl mr-3"></i>;
+      
+      // Web Technologies
+      case 'Bootstrap':
+        return <i className="devicon-bootstrap-plain colored text-2xl mr-3"></i>;
+      case 'Tailwind CSS':
+        return <i className="devicon-tailwindcss-plain colored text-2xl mr-3"></i>;
+      case 'Material-UI':
+        return <i className="devicon-materialui-plain colored text-2xl mr-3"></i>;
+      
+      // Database
+      case 'MongoDB':
+        return <i className="devicon-mongodb-plain colored text-2xl mr-3"></i>;
+      case 'SQL':
+        return <i className="devicon-mysql-plain colored text-2xl mr-3"></i>;
+      
+      // Tools
+      case 'Git':
+        return <i className="devicon-git-plain colored text-2xl mr-3"></i>;
+      case 'Docker':
+        return <i className="devicon-docker-plain colored text-2xl mr-3"></i>;
+      case 'Kubernetes':
+        return <i className="devicon-kubernetes-plain colored text-2xl mr-3"></i>;
+      
+      // Cloud Platforms
+      case 'Azure':
+        return <i className="devicon-azure-plain colored text-2xl mr-3"></i>;
+        
+      default:
+        return <i className="devicon-github-original colored text-2xl mr-3"></i>;
+    }
   };
 
   return (
@@ -102,7 +105,7 @@ const SkillItem: React.FC<SkillItemProps> = ({
         {getIcon()}
         <h3 className="font-semibold text-lg">{title}</h3>
       </div>
-      <ul className="text-sm space-y-2 w-full">
+      <ul className="text-sm space-y-4 w-full">
         {items.map((item, index) => (
           <li key={index} className="flex items-center">
             {getSkillIcon(item)}

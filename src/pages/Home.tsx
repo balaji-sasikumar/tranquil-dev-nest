@@ -1,4 +1,3 @@
-
 import React from 'react';
 import AnimatedText from '@/components/AnimatedText';
 import SkillItem from '@/components/SkillItem';
@@ -102,12 +101,9 @@ const Home: React.FC = () => {
             className="text-4xl font-bold"
             animation="fade-in"
           />
-          <AnimatedText 
-            text="Software Developer" 
-            className="text-xl text-muted-foreground mt-2"
-            animation="typing"
-            delay={500}
-          />
+          <div className="mt-2">
+            <h2 className="text-xl text-muted-foreground typing-text">Software Developer</h2>
+          </div>
         </div>
         <AnimatedText 
           text="Building secure, efficient, and user-friendly applications with modern web technologies."
@@ -119,7 +115,7 @@ const Home: React.FC = () => {
       {/* Skills Section */}
       <section>
         <h2 className="text-2xl font-semibold mb-6 text-center">Skills</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {skills.map((skill, index) => (
             <SkillItem
               key={index}

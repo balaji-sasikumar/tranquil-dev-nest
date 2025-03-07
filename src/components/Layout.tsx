@@ -1,8 +1,20 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import SocialLinks from './SocialLinks';
 
 const Layout: React.FC = () => {
+  useEffect(() => {
+    // Add devicon CSS
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css';
+    document.head.appendChild(link);
+    
+    return () => {
+      document.head.removeChild(link);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4 bg-background relative">
       <div className="max-w-4xl w-full mx-auto">
