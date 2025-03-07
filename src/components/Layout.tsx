@@ -1,15 +1,15 @@
-
-import React, { useEffect } from 'react';
-import SocialLinks from './SocialLinks';
+import React, { useEffect } from "react";
+import SocialLinks from "./SocialLinks";
 
 const Layout: React.FC = () => {
   useEffect(() => {
     // Add devicon CSS
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = 'https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css';
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href =
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css";
     document.head.appendChild(link);
-    
+
     return () => {
       document.head.removeChild(link);
     };
@@ -25,13 +25,13 @@ const Layout: React.FC = () => {
           <div id="blog" className="mb-16">
             <Blog />
           </div>
-          <div id="contact">
+          {/* <div id="contact">
             <Contact />
-          </div>
+          </div> */}
         </main>
       </div>
-      <SocialLinks 
-        linkedinUrl="https://linkedin.com/in/balaji-sasikumar/" 
+      <SocialLinks
+        linkedinUrl="https://linkedin.com/in/balaji-sasikumar/"
         githubUrl="https://github.com/balaji-sasikumar"
         devtoUrl="https://dev.to/balajisasikumar"
       />
@@ -40,8 +40,8 @@ const Layout: React.FC = () => {
 };
 
 // Import components here to avoid circular dependencies
-import Home from '../pages/Home';
-import Blog from '../pages/Blog';
-import Contact from '../pages/Contact';
+import Home from "../pages/Home";
+import Blog from "../pages/Blog";
+import Contact from "../pages/Contact";
 
 export default Layout;
