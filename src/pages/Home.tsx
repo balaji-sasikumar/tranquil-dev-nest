@@ -1,11 +1,12 @@
-
 import React from "react";
 import AnimatedText from "@/components/AnimatedText";
 import SplitText from "@/components/SplitText";
 import SkillItem from "@/components/SkillItem";
 import ProjectCard from "@/components/ProjectCard";
 import ExperienceTimeline from "@/components/ExperienceTimeline";
+import Certifications from "@/components/Certifications";
 import { Separator } from "@/components/ui/separator";
+import { certifications } from "@/data/certifications";
 
 const Home: React.FC = () => {
   const skills = [
@@ -169,6 +170,13 @@ const Home: React.FC = () => {
       <section>
         <h2 className="text-2xl font-semibold mb-6 text-center">Experience</h2>
         <ExperienceTimeline experiences={experiences} />
+      </section>
+
+      <Separator />
+
+      {/* Certifications Section */}
+      <section>
+        <Certifications certifications={certifications} />
       </section>
     </div>
   );
