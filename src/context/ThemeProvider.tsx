@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useEffect, useState } from "react";
 
 type Theme = "dark" | "light";
@@ -9,7 +8,7 @@ interface ThemeContextProps {
 }
 
 const ThemeContext = createContext<ThemeContextProps>({
-  theme: "light",
+  theme: "dark", // Default to dark mode
   setTheme: () => {},
 });
 
@@ -23,21 +22,14 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const [theme, setTheme] = useState<Theme>(() => {
     // Check for saved theme in localStorage
     const savedTheme = localStorage.getItem("theme") as Theme;
-    
-    // Check for system preference if no saved theme
-    if (!savedTheme) {
-      return window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark"
-        : "light";
-    }
-    
-    return savedTheme || "light";
+
+    return savedTheme || "dark"; // Default to "dark" if no saved theme
   });
 
   useEffect(() => {
     // Update localStorage when theme changes
     localStorage.setItem("theme", theme);
-    
+
     // Update document class for Tailwind
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
