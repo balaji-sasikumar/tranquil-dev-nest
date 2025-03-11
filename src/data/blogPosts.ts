@@ -8,6 +8,7 @@ export interface BlogPost {
   tags: string[];
   content?: string;
   slug: string;
+  devtoUrl: string; // Added devtoUrl property
 }
 
 export const blogPosts: BlogPost[] = [
@@ -19,7 +20,8 @@ export const blogPosts: BlogPost[] = [
     readTime: '8 min read',
     tags: ['Azure', 'Authentication', 'Security'],
     slug: 'secure-applications-azure-ad-b2c',
-    content: 'This is the full content of the blog post about Azure AD B2C...'
+    content: 'This is the full content of the blog post about Azure AD B2C...',
+    devtoUrl: 'https://dev.to/balajisasikumar/building-secure-applications-with-azure-ad-b2c'
   },
   {
     id: 2,
@@ -29,7 +31,8 @@ export const blogPosts: BlogPost[] = [
     readTime: '10 min read',
     tags: ['Node.js', 'MongoDB', 'Migration'],
     slug: 'migrating-dotnet-sql-to-nodejs-mongodb',
-    content: 'This is the full content of the blog post about migration...'
+    content: 'This is the full content of the blog post about migration...',
+    devtoUrl: 'https://dev.to/balajisasikumar/migrating-from-net-sql-to-nodejs-mongodb'
   },
   {
     id: 3,
@@ -39,6 +42,7 @@ export const blogPosts: BlogPost[] = [
     readTime: '12 min read',
     tags: ['Electron', 'React', 'Desktop Apps'],
     slug: 'building-electron-apps-react-material-ui',
-    content: 'This is the full content of the blog post about Electron apps...'
+    content: 'This is the full content of the blog post about Electron apps...',
+    devtoUrl: 'https://dev.to/balajisasikumar/building-electron-apps-with-react-and-material-ui'
   }
 ];
