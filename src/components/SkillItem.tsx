@@ -37,6 +37,8 @@ const SkillItem: React.FC<SkillItemProps> = ({
         return <i className="devicon-nodejs-plain colored text-3xl mr-4"></i>;
       case "React":
         return <i className="devicon-react-original colored text-3xl mr-4"></i>;
+      case ".NET":
+        return <i className="devicon-dot-net-plain colored text-3xl mr-4"></i>;
       case "Angular":
         return (
           <i className="devicon-angularjs-plain colored text-3xl mr-4"></i>
@@ -92,7 +94,7 @@ const SkillItem: React.FC<SkillItemProps> = ({
   return (
     <div
       className={cn(
-        "animate-slide-in flex flex-col items-center p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-border/40 bg-white/80",
+        "animate-slide-in flex flex-col items-center p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-border/40 bg-card",
         className
       )}
       style={{ animationDelay: `${delay}ms`, opacity: 0 }}

@@ -1,3 +1,4 @@
+
 import React from "react";
 import AnimatedText from "@/components/AnimatedText";
 import SplitText from "@/components/SplitText";
@@ -18,7 +19,7 @@ const Home: React.FC = () => {
     {
       icon: "frameworks",
       title: "Frameworks",
-      items: ["Node.js", "React", "Angular", "Ionic", "Electron"],
+      items: ["Node.js", "React", ".NET", "Angular", "Ionic", "Electron"],
     },
     {
       icon: "webTech",

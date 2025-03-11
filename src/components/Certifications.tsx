@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, BookOpen, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface Certification {
@@ -20,11 +20,11 @@ const Certifications: React.FC<CertificationsProps> = ({ certifications }) => {
   const getPlatformIcon = (platform: string) => {
     switch (platform.toLowerCase()) {
       case 'coursera':
-        return 'devicon-coursera-plain colored';
+        return <BookOpen className="h-8 w-8 text-blue-500" />;
       case 'microsoft':
-        return 'devicon-azure-plain colored';
+        return <i className="devicon-azure-plain colored text-3xl"></i>;
       default:
-        return 'devicon-certificate-plain';
+        return <Award className="h-8 w-8" />;
     }
   };
 
@@ -40,7 +40,7 @@ const Certifications: React.FC<CertificationsProps> = ({ certifications }) => {
           >
             <CardHeader className="pb-3 flex flex-row items-start gap-4">
               <div className="h-14 w-14 rounded-full flex items-center justify-center bg-muted/30">
-                <i className={`${getPlatformIcon(cert.platform)} text-3xl`}></i>
+                {getPlatformIcon(cert.platform)}
               </div>
               <div className="space-y-1.5">
                 <CardTitle className="text-lg">{cert.title}</CardTitle>
