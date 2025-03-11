@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://balaji-sasikumar.github.io/tranquil-dev-nest",
+  "homepage": "https://balaji-sasikumar.github.io",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
