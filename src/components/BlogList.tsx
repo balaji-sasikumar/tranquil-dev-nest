@@ -2,19 +2,17 @@
 import React from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { useNavigate } from 'react-router-dom';
 import { blogPosts } from '@/data/blogPosts';
 
 const BlogList: React.FC = () => {
-  const navigate = useNavigate();
-
-  const handleReadMore = (slug: string) => {
-    navigate(`/blog/${slug}`);
+  const handleReadMore = (devtoUrl: string) => {
+    // Open the dev.to URL in a new tab
+    window.open(devtoUrl, '_blank');
   };
 
   return (
     <div className="space-y-6 animate-fade-up">
-      {blogPosts.map((post, index) => (
+      {blogPosts.map((post) => (
         <Card key={post.id} className="hover:shadow-md transition-all">
           <CardHeader className="pb-3">
             <CardTitle className="text-xl">{post.title}</CardTitle>
@@ -36,7 +34,7 @@ const BlogList: React.FC = () => {
             <Button 
               variant="ghost" 
               size="sm"
-              onClick={() => handleReadMore(post.slug)}
+              onClick={() => handleReadMore(post.devtoUrl)}
             >
               Read More →
             </Button>
